@@ -45,21 +45,21 @@ library(cowplot)
  options(future.globals.maxSize = 48000 * 1024^2) #increases the max global export for future expression (if you need to)
 
 # PRE-INTEGRATION: Loading in the single-cell wound healing data set and performing individual data QC ####
-KOFD0.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/KOFD0/filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
-KOFD3.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/KOFD3/filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
-KOFD7.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/KOFD7/filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
+KOFD0.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/KOFD0/KOFD0 filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
+KOFD3.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/KOFD3/KOFD3 filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
+KOFD7.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/KOFD7/KOFD7 filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
 
-KOMD0.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/KOMD0/filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
-KOMD3.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/KOMD3/filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
-KOMD7.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/KOMD7/filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
+KOMD0.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/KOMD0/KOMD0 filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
+KOMD3.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/KOMD3/KOMD3 filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
+KOMD7.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/KOMD7/KOMD7 filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
 
-WTFD0.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/WTFD0/filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
-WTFD3.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/WTFD3/filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
-WTFD7.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/WTFD7/filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
+WTFD0.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/WTFD0/WTFD0 filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
+WTFD3.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/WTFD3/WTFD3 filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
+WTFD7.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/WTFD7/WTFD7 filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
 
-WTMD0.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/WTMD0/filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
-WTMD3.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/WTMD3/filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
-WTMD7.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/WTMD7/filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
+WTMD0.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/WTMD0/WTMD0 filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
+WTMD3.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/WTMD3/WTMD3 filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
+WTMD7.obj<- Read10X_h5("C:/Users/chenh/Desktop/Novogene Sequencing Folders/Novogene sc-RNA seq/Result_X202SC23104597-Z01-F004_mm10/Result_X202SC23104597-Z01-F004_mm10/1.Data_process/WTMD7/WTMD7 filtered_feature_bc_matrix.h5",use.names = TRUE,unique.features = TRUE)
 
 ### Creating seuratObject - preQC
 KOFD0.SO <- CreateSeuratObject(counts = KOFD0.obj, min.cells = 5, min.features = 200)
@@ -764,17 +764,17 @@ table(All.merged$orig.identity, All.merged$seurat_clusters)
 
 # Step 7.9: Perform Seurat data integration using the RPCA method --- for more information on this and other data integration methods, please read the following Seurat vignette: 
 All.merged <- IntegrateLayers(
-  object = All.merged, method = RPCAIntegration,
+  object = All.merged, method = RPCA,
   orig.reduction = "pca", new.reduction = "integrated.rpca",
   verbose = TRUE
-) ##can do different types integration - just change "method = ..."
+) ##can do different types  - just change "method = ..."
 
-# Perform UMAP analysis and clustering on the combined dataset after data integration
+# Perform UMAP analysis and clustering on the combined dataset after data 
 All.merged <- RunUMAP(All.merged, reduction = "integrated.rpca", dims = 1:10, reduction.name = "umap.rpca") #choosing 10 dim based on previous
 All.merged <- FindNeighbors(All.merged, reduction = "integrated.rpca", dims = 1:10)
 All.merged <- FindClusters(All.merged, resolution = .1, cluster.name = "rpca_clusters")
 
-# Visualize the UMAP plot according to cluster and orig.identity numbers after integration: identified 13 clusters - may want to reduce the dimensions to find even less
+# Visualize the UMAP plot according to cluster and orig.identity numbers after : identified 13 clusters - may want to reduce the dimensions to find even less
 DimPlot(All.merged, reduction = "umap.rpca", group.by = c("seurat_clusters","orig.identity"))
 
 # Test different resolutions as well. 
@@ -803,7 +803,7 @@ dev.off()
 table(All.merged$orig.identity, All.merged$seurat_clusters)
 All.merged <- JoinLayers(All.merged)
 
-# From the UMAP plot and the table of the integrated data, there is now excellent overlap between the two orig.identityes across different clusters. Interestingly, after integration the numbers of clusters at this resolution is the same as what was determined for orig.identity #1 alone.
+# From the UMAP plot and the table of the integrated data, there is now excellent overlap between the two orig.identityes across different clusters. Interestingly, after  the numbers of clusters at this resolution is the same as what was determined for orig.identity #1 alone.
 # After dataset integration and prior to downstream analyses, the layers of the merged dataset must be joined
 All.merged <- JoinLayers(All.merged)
 
